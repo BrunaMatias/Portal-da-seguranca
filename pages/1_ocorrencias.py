@@ -47,7 +47,7 @@ with aba[1]:
     st.subheader("🔎 Consultar Ocorrências por Status")
     st.caption("Filtra as ocorrências cadastradas com base no status atual (em andamento, resolvido ou em investigação). Permite visualizar os dados em tempo real.")
 
-    status_filtro = st.selectbox("Status", ["Em andamento", "Resolvido", "Em investigação", "Em análise"])
+    status_filtro = st.selectbox("Status", ["Em andamento", "Resolvido", "Em investigação", "Em Análise"])
     if st.button("Buscar"):
         try:
             conn = get_connection()
