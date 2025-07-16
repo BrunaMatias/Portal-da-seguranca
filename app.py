@@ -36,7 +36,7 @@ st.markdown("""
 
 - 🚨 **Cadastro e consulta de ocorrências**
 - 🎥 **Julia**
-- 📊 **Larissa**
+- 📊 **Controle de viaturas e policiais**
 
 Use o menu lateral à esquerda para navegar entre as páginas.
 """)
