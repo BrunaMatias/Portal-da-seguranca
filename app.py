@@ -35,7 +35,7 @@ st.markdown("#### 📁 Organização das Páginas do Sistema")
 st.markdown("""
 
 - 🚨 **Cadastro e consulta de ocorrências**
-- 👥 **Consulta e cadastro de Infratores**
+- 👥 **Cadastro e consultas de Infratores**
 - 🚓 **Controle de viaturas e policiais**
 
 Use o menu lateral à esquerda para navegar entre as páginas.
