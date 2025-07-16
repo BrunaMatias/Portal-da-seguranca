@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
-from db_config import get_connection, init_database
+from db_config import get_connection
 import datetime
-
-# Inicializar banco de dados
-init_database()
 
 st.set_page_config(page_title="Controle de Viaturas e Policiais", layout="wide")
 
