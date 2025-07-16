@@ -6,7 +6,40 @@ st.set_page_config(page_title="Ocorrências - Bruna", layout="centered")
 
 st.title("🚨 Página de Ocorrências")
 st.markdown("""
-Nesta seção do sistema, você pode registrar novas ocorrências e consultar registros já existentes na base de dados, com diferentes filtros e detalhamentos.""")
+Nesta seção do sistema, você pode registrar novas ocorrências e consultar registros já existentes na base de dados, com diferentes filtros.""")
+
+# Estatísticas básicas no topo
+try:
+    conn = get_connection()
+    cur = conn.cursor()
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        cur.execute("SELECT COUNT(*) FROM Ocorrencia")
+        total_ocorrencias = cur.fetchone()[0]
+        st.metric("Ocorrências", total_ocorrencias)
+
+    with col2:
+        cur.execute("SELECT COUNT(*) FROM Endereco")
+        total_enderecos = cur.fetchone()[0]
+        st.metric("Endereços", total_enderecos)
+
+    with col3:
+        cur.execute("SELECT COUNT(*) FROM CameraOcorrencia")
+        total_cameras = cur.fetchone()[0]
+        st.metric("Câmeras", total_cameras)
+
+    with col4:
+        cur.execute("SELECT COUNT(DISTINCT tipo) FROM Ocorrencia")
+        tipos_diferentes = cur.fetchone()[0]
+        st.metric("Tipos de Ocorrência", tipos_diferentes)
+
+    cur.close()
+    conn.close()
+
+except Exception as e:
+    st.error(f"Erro ao carregar estatísticas: {e}")
 
 
 aba = st.tabs([
